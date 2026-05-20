@@ -15,7 +15,10 @@ export default function DeviceSimulator({
   language,
 }: DeviceSimulatorProps) {
   
-  if (deviceFrame === 'full') {
+  // On real narrow screen systems (like actual phone/tablet browsers), we bypass simulations to show 100% pure responsive screen
+  const isActualMobileViewport = typeof window !== 'undefined' && window.innerWidth < 1024;
+
+  if (deviceFrame === 'full' || isActualMobileViewport) {
     return <div id="auto-responsive-layout" className="w-full min-h-screen bg-white">{children}</div>;
   }
 

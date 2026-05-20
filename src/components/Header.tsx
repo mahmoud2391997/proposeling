@@ -48,7 +48,7 @@ export default function Header({
     <div className="w-full flex flex-col z-50 bg-white border-b border-slate-100 sticky top-0">
       
       {/* Redesign Interactive Banner & Frame Toggler - Elite Agency Feature */}
-      <div className="bg-slate-950 text-slate-300 py-2.5 px-4 font-sans text-xs flex flex-wrap justify-between items-center gap-3">
+      <div className="hidden lg:flex bg-slate-950 text-slate-300 py-2.5 px-4 font-sans text-xs justify-between items-center gap-3">
         <div className="flex items-center gap-2">
           <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
           <span className="font-semibold text-white tracking-wider uppercase text-[10px] bg-slate-800 px-2 py-0.5 rounded">
@@ -133,7 +133,7 @@ export default function Header({
             <span className="block text-lg font-bold text-slate-900 tracking-tight leading-none group-hover:text-sky-500 transition-colors">
               Medicine Mentor
             </span>
-            <span className="block text-[10px] text-slate-500 tracking-normal mt-0.5">
+            <span className="hidden sm:block text-[10px] text-slate-500 tracking-normal mt-0.5">
               {language === 'en' ? 'The Proper Use of Medicine' : 'ঔষধের সঠিক ব্যবহার নির্দেশিকা'}
             </span>
           </div>
@@ -168,13 +168,26 @@ export default function Header({
             onClick={() => {
               setCurrentView('homepage');
               setTimeout(() => {
-                const el = document.getElementById('services-section');
+                const el = document.getElementById('consult-section');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }, 100);
             }}
-            className="px-4 py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100/50 transition-all"
+            className="px-4 py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100/50 transition-all cursor-pointer"
           >
-            {language === 'en' ? 'Counseling Tools' : 'কাউন্সেলিং'}
+            {language === 'en' ? 'Counseling' : 'কাউন্সেলিং'}
+          </button>
+          <button
+            id="nav-books"
+            onClick={() => {
+              setCurrentView('homepage');
+              setTimeout(() => {
+                const el = document.getElementById('books-section');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }, 100);
+            }}
+            className="px-4 py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100/50 transition-all cursor-pointer"
+          >
+            {language === 'en' ? 'Published Books' : 'বইসমূহ'}
           </button>
           <button
             id="nav-styleguide"
@@ -336,9 +349,23 @@ export default function Header({
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }, 200);
               }}
+              className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-colors ${currentView === 'homepage' ? 'text-slate-700 hover:bg-slate-50' : 'text-slate-700 hover:bg-slate-50'}`}
+            >
+              {language === 'en' ? 'Counseling' : 'কাউন্সেলিং'}
+            </button>
+            <button
+              id="mob-nav-books"
+              onClick={() => {
+                setCurrentView('homepage');
+                setMobileMenuOpen(false);
+                setTimeout(() => {
+                  const el = document.getElementById('books-section');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }, 200);
+              }}
               className="w-full text-left px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50"
             >
-              {language === 'en' ? 'Medication Intake Counseling' : 'জ্বর ও ব্যথানাশক ক্যালকুলেটর'}
+              {language === 'en' ? 'Published Books' : 'বইসমূহ'}
             </button>
           </div>
 

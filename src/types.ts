@@ -69,3 +69,24 @@ export interface Counselor {
   avatar: string;
   rating: number;
 }
+
+export interface Book {
+  id: string;
+  title: string;
+  titleBn: string;
+  author: string;
+  authorBn: string;
+  price: string;
+  priceBn: string;
+  originalPrice: string;
+  originalPriceBn: string;
+  pages: number;
+  pagesBn: string;
+  rating: number;
+  image: string;
+  badge: string;
+  badgeBn: string;
+  description?: string;
+  descriptionBn?: string;
+}
+

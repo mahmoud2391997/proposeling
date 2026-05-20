@@ -1,4 +1,4 @@
-import { Article, Category, Course, Counselor } from './types';
+import { Article, Category, Course, Counselor, Book } from './types';
 
 export const categoriesData: Category[] = [
   {
@@ -14,14 +14,14 @@ export const categoriesData: Category[] = [
   },
   {
     id: 'diabetes-endocrine',
-    name: 'Diabetes Care',
-    nameBn: 'ডায়াবেটিস ও হরমোন',
+    name: 'Diabetes & Diet Care',
+    nameBn: 'ডায়াবেটিস ও নিয়ন্ত্রিত খাদ্য',
     count: 18,
     countBn: '১৮',
     icon: 'Activity',
     color: 'teal',
-    description: 'Insulin safety, oral hypoglycemics, and metabolic regulation guidance.',
-    descriptionBn: 'ইনসুলিনের নিরাপত্তা, মুখে খাওয়ার ডায়াবেটিসের ওষুধ এবং মেটাবলিক নিয়মের নির্দেশিকা।'
+    description: 'Insulin safety, oral hypoglycemics, low GI Bengali diet recommendations, and metabolic regulation guidance.',
+    descriptionBn: 'ইনসুলিনের নিরাপত্তা, মুখে খাওয়ার ডায়াবেটিসের ওষুধ, লো-জিআই বাঙালি খাবার ও মেটাবলিক নিয়মের নির্দেশিকা।'
   },
   {
     id: 'otc-safety',
@@ -31,8 +31,8 @@ export const categoriesData: Category[] = [
     countBn: '৩৫',
     icon: 'Pill',
     color: 'sky',
-    description: 'Safe usage of non-prescription pain relievers, cold medicines, and digestive aids.',
-    descriptionBn: 'প্রেসক্রিপশন ছাড়া পাওয়া ব্যথানাশক, ঠাণ্ডা-কাশির ওষুধ ও হজমের ওষুধের সঠিক ব্যবহার।'
+    description: 'Safe usage of non-prescription pain relievers, cold medicines, zinc supplements, and digestive aids.',
+    descriptionBn: 'প্রেসক্রিপশন ছাড়া পাওয়া ব্যথানাশক, ঠাণ্ডা-কাশির ওষুধ, জিংক সাপ্লিমেন্ট ও হজমের ওষুধের সঠিক ব্যবহার।'
   },
   {
     id: 'pediatrics-child',
@@ -42,8 +42,8 @@ export const categoriesData: Category[] = [
     countBn: '১২',
     icon: 'Baby',
     color: 'indigo',
-    description: 'Pediatric dosing, suspension measurements, and critical alert indexes for childrens health.',
-    descriptionBn: 'শিশুদের ওষুধের মাত্রা, সিরাপ মাপার সঠিক নিয়ম এবং শিশু স্বাস্থ্যের অতিজরুরি সতর্কতা।'
+    description: 'Pediatric dosing, measles precautions, child syrup measurements, and critical alert indexes for childrens health.',
+    descriptionBn: 'শিশুদের ওষুধের মাত্রা, হামের সুনির্দিষ্ট সতর্কতা, সিরাপ মাপার সঠিক নিয়ম এবং শিশু স্বাস্থ্যের অতিজরুরি সতর্কতা।'
   },
   {
     id: 'antibiotic-awareness',
@@ -60,145 +60,222 @@ export const categoriesData: Category[] = [
 
 export const articlesData: Article[] = [
   {
-    id: 'ccb-hypertension',
+    id: 'diabetes-diet',
+    title: 'Is Diabetes All About Closing All Food Options? Learn the Correct Diet Chart',
+    titleBn: 'ডায়াবেটিস মানেই কি সব খাবার বন্ধ? জেনে নিন সঠিক রিয়েলিস্টিক দেশি খাদ্যতালিকা',
+    slug: 'diabetes-bengali-diet-guide',
+    category: 'Diabetes & Diet Care',
+    categoryBn: 'ডায়াবেটিস ও নিয়ন্ত্রিত খাদ্য',
+    readTime: '5 min read',
+    readTimeBn: '৫ মিনিট পাঠ',
+    date: 'May 19, 2026',
+    dateBn: '১৯ মে, ২০২৬',
+    author: 'Dr. Rafiqul Islam, Pharm.D',
+    authorBn: 'ডা. রফিকুল ইসলাম, ফার্ম.ডি',
+    summary: 'A complete medical analysis of the popular diabetic diet myth in Bangladesh. Understand low glycemic index local foods, rice control, and safe carbohydrate distribution.',
+    summaryBn: 'ডায়াবেটিস আক্রান্ত রোগীদের কি সব মিষ্টি বা ভাত খাওয়া নিষেধ? কীভাবে প্রতিদিনের দেশীয় খাবার পরিমাপ করে রক্তে গ্লুকোজ লেভেল নিয়ন্ত্রণে রাখা যায়, তা নিয়ে সঠিক ও বিজ্ঞানভিত্তিক আলোচনা।',
+    disclaimer: 'Disclaimer: This carbohydrate regulation index serves for health literacy only. Consult your clinical endocrinologist to format individual caloric budgets.',
+    disclaimerBn: 'সতর্কতা: এই শর্করা ও ক্যালরি নিয়ন্ত্রণ নির্দেশিকা কেবল সচেতনতা বৃদ্ধির উদ্দেশ্যে তৈরি। ব্যক্তিগত ইনসুলিন মাত্রা ও ক্যালরি চার্ট তৈরিতে আপনার এন্ডোক্রাইনোলজিস্টের পরামর্শ নিন।',
+    tags: ['Diabetes', 'Diabetic Diet', 'Low GI Foods', 'Organic Health'],
+    tagsBn: ['ডায়াবেটিস', 'ডায়াবেটিস ডায়েট', 'লো-জিআই খাবার', 'স্বাস্থ্য সচেতনতা'],
+    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=800&auto=format&fit=crop',
+    content: [
+      '### The "Forbidden Food" Myth\n\nWhen diagnosed with Type 2 Diabetes in Bangladesh, the immediate traditional reaction of family members is to stop all normal foods: rice is completely locked away, sweet fruits are blacklisted, and the patient feels extremely restricted. Scientifically, this extreme caloric starvation often leads to sudden hypoglycemia, which is far more dangerous than hyperglycemia.',
+      '### Understanding Glycemic Index (GI) and Local Food Carbohydrates\n\n*   **High GI Foods**: Standard white polished rice, flour-based parathas, and refined sugar. They cause direct instant spikes in blood sugar.\n*   **Medium to Low GI Alternatives**: Red rice (Lal chal), whole wheat handmade roti, oats, raw spinach, and leafy vegetables.\n*   **The Rice Substitute Strategy**: You don\'t need to abandon rice entirely. Portion control is what matters. Fill 50% of your plate with green vegetables, 25% with protein/fish, and only 25% with red unrefined rice.',
+      '### Safe Fruit Consumption Guide\n\nMany patients avoid delicious local seasonal fruits like mangoes, jackfruits, or litchis out of extreme fear. Yes, they contain natural fructose, but you can consume them in limited portions as mid-day snacks. Avoid fruit juices because juicing removes the essential dietary fibers, which accelerates sugar absorption. Eat the whole fruit instead!',
+      '### Practical Dietary Rules for Bangladeshis\n\n1.  **Ditch Commercial Diabetic Foods**: Most packaged "Diabetic Biscuits" contain refined flour and palm oil, which secretly spike sugar levels.\n2.  **Consistency in Timing**: Take your meals and snacks at the exact same hour daily to stabilize glucose fluctuation with your medication.\n3.  **Active Muscle Movement**: Even a gentle 20-30 minutes walk immediately after principal meals makes muscle cells absorb surplus blood glucose without relying on auxiliary insulin.'
+    ],
+    contentBn: [
+      '### "সব খাবার বন্ধ" প্রথার ক্ষতিকর ভুল ধারণা\n\nবাংলাদেশে কারো ডায়াবেটিস ধরা পড়লেই সবার প্রথম যে সিদ্ধান্তটি নেওয়া হয়, তা হলো রোগীর নিয়মিত সব স্বাভাবিক খাবার বন্ধ করে দেওয়া। ভাত সম্পূর্ণ লক করে লাল আটার রুটি দিনরাত শুরু হয়, মিষ্টি ফল খাওয়া একদম নিষিদ্ধ করা হয়। বিজ্ঞানসম্মতভাবে এই চরম খাদ্য অবহেলা অনেক সময় রক্তে গ্লুকোজ হঠাত মারাত্মক কমিয়ে দেয় (Hypoglycemia), যা সুগার বৃদ্ধির চেয়েও রোগীর তাৎক্ষণিক জীবনের জন্য মারাত্মক বিপজ্জনক হতে পারে।',
+      '### গ্লাইসেমিক ইনডেক্স (GI) ও আমাদের দেশীয় খাবার\n\n*   **উচ্চ গ্লাইসেমিক ইনডেক্স (হাই জিআই) খাবার**: চকচকে সাদা চালের ভাত, ময়দার তৈরি পরোটা এবং রিফাইনড চিনি। এগুলো খাওয়ার ১৫ মিনিটের মধ্যে রক্তে গ্লুকোজ লেভেল এক লাফে বাড়িয়ে দেয়।\n*   **নিচু ও মাঝারি জিআই বিকল্প খাবার**: লাল চালের ভাত, লাল আটার হাতে তৈরি রুটি, ওটস, সবুজ শাকসবজি এবং ডাল।\n*   **প্লেট মেথড ফরমূলা**: ভাত একবারে বন্ধ করার কোনো প্রয়োজন নেই। আপনার দুপুরের খাওয়ার প্লেটকে ৪ ভাগে ভাগ করুন। অর্ধেক প্লেট যেন পূর্ণ থাকে সবুজ শাকসবজি ও সালাদ দিয়ে, এক-চতুর্থাংশ থাকবে প্রোটিন/মাছ বা ডাল এবং বাকি এক-চতুর্থাংশ থাকবে লাল চালের ভাত।',
+      '### দেশীয় ফল খাওয়ার বৈজ্ঞানিক নিয়ম\n\nআম, কাঁঠাল বা লিচুর মৌসুমে অনেকেই তীব্র ভয়ে সব ফল খাওয়া বন্ধ রাখেন। অথচ সীমিত মাত্রায় নির্দিষ্ট সময়ে ফল আমাদের জন্য অত্যন্ত প্রয়োজনীয় ভিটামিন ও অ্যান্টিঅক্সিডেন্ট যোগায়। তবে কখনো ফলের রস বা জুস করে খাবেন না। জুস করলে ফলের প্রয়োজনীয় ডায়েটারি ফাইবার বা আঁশ নষ্ট হয়ে যায়, যা সরাসরি সুগার স্পাইক ঘটায়। সবসময় গোটা ফল চিবিয়ে খান।',
+      '### বাংলাদেশি রোগীদের জন্য ৩টি সোনালী নিয়ম\n\n১.  **কমার্শিয়াল ডায়াবেটিক বিস্কুট বর্জন**: বাজারজাত ডায়াবেটিক বিস্কুটে ক্ষতিকর ডালডা ও ময়দা প্রচুর পরিমাণে থাকে যা অজান্তে সুগার লেভেল বাড়ায়।\n২.  **খাবার সেবনের সুনির্দিষ্ট নিয়মিত সময়**: প্রতিদিন নির্দিষ্ট সময়ে খাবার ও মধ্যাহ্ন নাশতার অভ্যাস গড়ুন, যাতে রক্তের সুগার মাত্রা ওষুধ ও ইনসুলিনের সাথে চমৎকার ভারসাম্য বজায় রাখতে পারে।\n৩.  **খাবারের পর হালকা হাঁটা**: দুপুরের বা রাতের প্রধান খাবার গ্রহণের পর অন্তত ১৫-২০ মিনিট ধীরে হাঁটাহাঁটি করুন। এতে পেশী কোষগুলো শরীরের বাড়তি গ্লুকোজ ইনসুলিনের সাহায্য ছাড়াই কাজে লাগাতে পারে।'
+    ]
+  },
+  {
+    id: 'hypertension-guide',
     title: 'The Role of Calcium Channel Blockers in Hypertension Management',
-    titleBn: 'উচ্চ রক্তচাপ নিয়ন্ত্রণে ক্যালসিয়াম চ্যানেল ব্লকারসমূহের ভূমিকা ও সঠিক ব্যবহার',
-    slug: 'ccb-hypertension-guide',
+    titleBn: 'হাইপারটেনশন (উচ্চ রক্তচাপ): কারণ, লক্ষণ, প্রতিরোধ ও সঠিক ওষুধ নির্দেশিকা',
+    slug: 'hypertension-and-ccb-guide',
     category: 'Cardiovascular Health',
     categoryBn: 'হৃতযন্ত্র ও রক্তচাপ',
     readTime: '6 min read',
     readTimeBn: '৬ মিনিট পাঠ',
     date: 'May 18, 2026',
     dateBn: '১৮ মে, ২০২৬',
-    author: 'Dr. Rafiqul Islam, Pharm.D',
-    authorBn: 'ডা. রফিকুল ইসলাম, ফার্ম.ডি',
-    summary: 'A comprehensive medical guide explaining CCBs like Amlodipine, when to take them, their mechanism, common drug interactions, and dietary warnings.',
-    summaryBn: 'অ্যামলোডিপিন এর মতো ক্যালসিয়াম চ্যানেল ব্লকার জাতীয় ওষুধ কখন খাবেন, পার্শ্বপ্রতিক্রিয়া এবং খাদ্যতালিকার বিশেষ সতর্কতা নিয়ে এক বিস্তারিত আলোচনা।',
+    author: 'Prof. Subrata Sen, FACC',
+    authorBn: 'অধ্যাপক সুব্রত সেন, এফএসিসি',
+    summary: 'A comprehensive medical guide explaining CCBs like Amlodipine, when to take them, their biological mechanism, common drug-food interactions, and sodium reduction warnings.',
+    summaryBn: 'উচ্চ রক্তচাপ নিয়ন্ত্রণে অ্যামলোডিপিনের মতো ক্যালসিয়াম চ্যানেল ব্লকারসমূহের মেডিকেল কার্যকারিতা, কখন সেবন করবেন, লবণ নিয়ন্ত্রণের উপায় এবং বাতাবি লেবু ও ব্যথানাশকের মারাত্মক ড্রাগ মিথস্ক্রিয়া নিয়ে বিস্তারিত আলোচনা।',
     disclaimer: 'Disclaimer: This article is for educational purposes only. Do not change clinical dosages without consulting your cardiologist.',
-    disclaimerBn: 'সতর্কতা: এই নিবন্ধটি শুধুমাত্র শিক্ষামূলক উদ্দেশ্যে তৈরি। আপনার কার্ডিওলজিস্টের পরামর্শ ছাড়া ওষুধের মাত্রা পরিবর্তন করবেন না।',
+    disclaimerBn: 'সতর্কতা: এই নিবন্ধটি শুধুমাত্র শিক্ষামূলক উদ্দেশ্যে তৈরি। আপনার কার্ডিওলজিস্ট বা রেজিস্টার্ড চিকিৎসকের পরামর্শ ছাড়া ও রক্তচাপের ওষুধ পরিবর্তন বা ড্রপ আউট করবেন না।',
     tags: ['Amlodipine', 'Hypertension', 'Cardio', 'Drug Guide'],
     tagsBn: ['অ্যামলোডিপিন', 'উচ্চ রক্তচাপ', 'কার্ডিও', 'মেডিসিন গাইড'],
-    image: 'https://picsum.photos/seed/cardio/800/450',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop',
     content: [
-      '### What are Calcium Channel Blockers (CCBs)?\n\nCalcium channel blockers (CCBs) are a class of medications widely used to treat high blood pressure (hypertension) and chest pain (angina). They work by relaxing the muscles of your heart and blood vessels, allowing blood flow to increase and blood pressure to drop. Common examples include **Amlodipine**, **Nifedipine**, and **Lercanidipine**.',
-      '### How Do They Work?\n\nOur blood vessel walls and heart muscle rely on calcium ions to contract. CCBs act as a gatekeeper, preventing calcium from entering these muscle cells. When calcium entry is blocked, the vascular smooth muscles relax, leading to **vasodilation** (widening of arteries). This decreases the workload of the heart and lowers resistance to blood flow.',
-      '### Optimizing Administration: When to Take?\n\n*   **Consistency is Key**: It is highly recommended to take your CCB at the **same time every single day** to maintain steady concentration in your bloodstream.\n*   **Morning vs. Night**: Depending on symptoms like ankle edema or nocturnal hypertension, your doctor may recommend night dosing. Follow your physician’s schedule.\n*   **Food Interactions**: Can be taken with or without food, but avoid **grapefruit juice** entirely. Grapefruit contains furanocoumarins which block the intestinal enzyme CYP3A4, causing the drug to accumulate in your body and dangerously dropping your blood pressure.',
-      '### Common Side Effects & Mitigations\n\nWhile highly effective, CCBs can trigger side effects due to vascular dilation:\n\n1.  **Peripheral Edema (Ankle Swelling)**: This occurs because blood vessels in the legs dilate, causing localized fluid accumulation. Gentle walking and keeping your legs elevated can help. If severe, consult your doctor.\n2.  **Dizziness or Flushes**: Standing up too quickly can cause orthostatic hypotension. Move slowly when shifting positions.\n3.  **Gingival Hyperplasia**: Swelling of gums is a rare side effect of Amlodipine. Maintain strict oral hygiene (flossing twice daily) and complete dental cleanings.',
-      '### Crucial Drug & Food Interactions to Watch\n\n*   **Grapefruit / Grapefruit Juice**: Dramatically elevates blood concentrations of Amlodipine/Nifedipine.\n*   **NSAIDs (like Ibuprofen / Naproxen)**: Frequently taken for pain, NSAIDs can cause fluid retention and decrease the antihypertensive efficacy of CCBs.\n*   **Simvastatin**: High doses of CCBs can raise the plasma levels of Simvastatin, increasing the risk of muscle pain (myopathy). If you are on both, keep the cholesterol medication dosage strictly within safe medical thresholds.',
-      '### Summary Checklist for Patients\n\n* Take your medicine daily at the same time.\n* Monitor and log your blood pressure twice a week.\n* Limit sodium/salt intake.\n* Avoid Grapefruit or high doses of painkillers.\n* Schedule routine kidney and kidney function checks and check in with your Medicine Mentor specialist.'
+      '### What is Hypertension & How are CCBs Used?\n\nHypertension (high blood pressure) is often called the silent killer because it can show zero overt symptoms until a catastrophic clinical stroke or coronary event occurs. Calcium channel blockers (CCBs) are a primary line of defense. Common examples include **Amlodipine**, **Nifedipine**, and **Lercanidipine**.',
+      '### The Biological Mechanism\n\nOur arterial smooth muscles and cardiac walls rely on calcium ions to initiate contraction. CCBs act as molecular gatekeepers, blocking calcium entry. When calcium influx decreases, vascular muscles relax deeply. This produces **vasodilation** (widening of arteries), which instantly lowers systemic vascular resistance and reduces cardiac workload.',
+      '### Optimizing Administration & Timing\n\n*   **Strict Temporal Discipline**: Take your blood pressure medication at the exact same hour every single day to maintain steady pharmaceutical concentration in your cardiovascular system.\n*   **Dietary Grapefruit Warning**: Avoid consuming **grapefruit (Batabi Lebu)** or its juice entirely. Grapefruit contains furanocoumarins that permanently deactivate the intestinal enzyme CYP3A4. This blocks the normal metabolism of CCBs, causing dangerous accumulation in the blood and sudden lethal hypotension.',
+      '### Essential Local Sodium & Food Adjustments\n\nReducing refined salt intake is mandatory. For Bangladeshis, salt added during raw rice consumption or inside cooked curry should be minimized. Excess sodium draws fluid into the circulatory pathways, directly escalating inner arterial pressure.'
     ],
     contentBn: [
-      '### ক্যালসিয়াম চ্যানেল ব্লকার (CCBs) কি?\n\nক্যালসিয়াম চ্যানেল ব্লকার (CCB) হলো এক শ্রেণীর ওষুধ যা মূলত উচ্চ রক্তচাপ (হাইপারটেনশন) এবং বুক ব্যথার (এনজিনা) চিকিৎসায় ব্যবহৃত হয়। এরা হৃৎপিণ্ড ও রক্তনালীর পেশীগুলোকে শিথিল করে রক্তপ্রবাহ সহজ ও রক্তচাপ হ্রাস করে। সাধারণ উদাহরণগুলোর মধ্যে রয়েছে **অ্যামলোডিপিন (Amlodipine)**, **নিফেডিপিন (Nifedipine)** এবং **লারকানিডিপিন (Lercanidipine)**।',
-      '### এগুলো কীভাবে কাজ করে?\n\nআমাদের রক্তনালীর দেয়াল এবং হার্টের পেশী সংকুচিত হওয়ার জন্য ক্যালসিয়াম আয়নের প্রয়োজন হয়। CCBs গুলো দারোয়ান হিসেবে কাজ করে এবং এই কোষগুলিতে ক্যালসিয়াম প্রবেশে বাধা দেয়। যখন ক্যালসিয়ামের প্রবেশ বন্ধ হয়, তখন রক্তনালী শিথিল ও প্রসারিত হয়। এর ফলে রক্ত সঞ্চালনে হার্টকে কম চাপ প্রয়োগ করতে হয় এবং রক্তচাপ কমে যায়।',
-      '### ওষুধ গ্রহণের সঠিক নিয়ম: কখন খাবেন?\n\n*   **নিয়মিত অভিন্ন সময়সূচী**: রক্তে ওষুধের সঠিক মাত্রা বজায় রাখতে প্রতিদিন **ঠিক একই সময়ে** ওষুধটি সেবন করা উচিত।\n*   **সকাল বনাম রাত**: গোড়ালি ফুলা বা রাতে রক্তচাপ বাড়ার প্রবণতার উপর ভিত্তি করে আপনার চিকিৎসক এটি রাতে খাবার পরামর্শ দিতে পারেন। চিকিৎসকের নির্দেশ কঠোরভাবে মেনে চলুন।\n*   **খাবারের সাথে সম্পর্ক**: এটি খাবারের আগে বা পরে খাওয়া যায়, তবে **জাম্বুরা বা বাতাবি লেবুর রস (Grapefruit juice)** সম্পূর্ণ পরিহার করুন। জাম্বুরার রস অন্ত্রের বিশেষ এনজাইম নিষ্ক্রিয় করে দেয়, যার ফলে রক্তে ওষুধের ঘনত্ব অত্যন্ত বেড়ে যায় এবং রক্তচাপ বিপজ্জনকভাবে নেমে যেতে পারে।',
-      '### সাধারণ পার্শ্বপ্রতিক্রিয়া ও প্রশমন\n\nঅত্যন্ত কার্যকরী হওয়া সত্ত্বেও রক্তনালী প্রসারণের কারণে কিছু পার্শ্বপ্রতিক্রিয়া দেখা দিতে পারে:\n\n১.  **পা বা গোড়ালি ফোলা (Ankle Edema)**: রক্তনালীগুলো প্রসারিত হওয়ার কারণে পায়ে তরল জমে ফুলে যায়। নিয়মিত হাঁটাচলা করা এবং বসার সময় পা উঁচুতে রাখা উপকারী। ফোলা অতিরিক্ত হলে ডাক্তারের পরামর্শ নিন।\n২.  **ঝিমুনি বা মাথা ঘোরানো**: হঠাৎ সোজা হয়ে দাঁড়ালে সাময়িক রক্তচাপ কমে যেতে পারে। বসা বা শোয়া থেকে ওঠার সময় ধীরে উঠুন।\n৩.  **মাড়ির ফোলাভাব (Gingival Hyperplasia)**: অ্যামলোডিপিনের দীর্ঘ মেয়াদী ব্যবহারে মাড়ির হালকা স্ফীতি হতে পারে। ডেন্টাল হাইজিন মেনে চলুন এবং নিয়মিত মাড়ির যত্ন নিন।',
-      '### গুরুত্বপূর্ণ মিথস্ক্রিয়া (Interactions) যা এড়ানো আবশ্যক\n\n*   **বাতাবি লেবু / জাম্বুরা**: হঠাৎ ওষুধের কার্যক্ষমতা বিষাক্ত মাত্রায় বাড়িয়ে তুলতে পারে।\n*   **ব্যথানাশক ওষুধ (NSAIDs)**: যেমন আইবুপ্রোফেন বা ন্যাপ্রক্সেন রক্তচাপ ওষুধের কার্যকারিতা কমিয়ে দেয় এবং শরীরে পানি জমতে সাহায্য করে।\n*   **সিমভাস্ট্যাটিন (Simvastatin)**: কোলেস্টেরলের এই ওষুধের সাথে অ্যামলোডিপিন সেবনে মাড়িতে বা পেশী ব্যথা (Myopathy) হওয়ার ঝুঁকি বাড়ে।'
+      '### উচ্চ রক্তচাপ এবং ক্যালসিয়াম চ্যানেল ব্লকার (CCBs) কী?\n\nউচ্চ রক্তচাপ বা হাইপারটেনশনকে "নীরব ঘাতক" বলা হয় কারণ স্ট্রোক বা হার্ট অ্যাটাকের মতো মারাত্মক অঘটন ঘটার আগে শরীরে কোনো স্পষ্ট লক্ষণ প্রকাশ পায় না। এই দীর্ঘমেয়াদী রোগ নিয়ন্ত্রণে প্রথম সারির ওষুধ হলো ক্যালসিয়াম চ্যানেল ব্লকার (CCB)। আমাদের দেশে অত্যন্ত বহুল ব্যবহৃত CCB-সমূহ হলো **অ্যামলোডিপিন (Amlodipine)**, **নিফেডিপিন (Nifedipine)** এবং **লারকানিডিপিন (Lercanidipine)**।',
+      '### এগুলো যেভাবে আমাদের হার্টকে সুরক্ষিত রাখে\n\nআমাদের রক্তনালীর দেয়াল এবং হার্টের চারপাশের পেশী সংকুচিত হওয়ার জন্য রক্ত থেকে ক্যালসিয়াম আয়নের ভেতরে প্রবেশের প্রয়োজন হয়। CCB গ্রুপের ওষুধগুলো ঐ ক্যালসিয়াম প্রবেশপথে এক প্রকার দারোয়ান স্বরূপ বসে যায়। যখন ক্যালসিয়ামের প্রবেশ বন্ধ হয়, তখন রক্তনালীগুলো শিথিল ও প্রসারিত হয়। এর ফলে রক্ত সঞ্চালনে হার্টকে কম চাপ প্রয়োগ করতে হয় এবং রক্তচাপ স্বাভাবিক মাত্রায় নেমে আসে।',
+      '### ওষুধ গ্রহণের সময় নির্ধারণ ও গুরুত্বপূর্ণ বাতাবি লেবুর সতর্কতা\n\n*   **অভিন্ন সময়সূচী মেনে চলা**: রক্তে ওষুধের সঠিক মাত্রা ২৪ ঘণ্টা বজায় রাখতে প্রতিদিন **ঠিক একই সময়ে** ওষুধটি সেবন করবেন।\n*   **বাতাবি লেবু বা জাম্বুরা (Grapefruit) পরিহার**: রক্তচাপের ওষুধ চলাকালে বাতাবি লেবু বা জাম্বুরার রস সম্পূর্ণ বর্জন করতে হবে। বাতাবি লেবুতে থাকা বিশেষ উপাদান আমাদের অন্ত্রে থাকা সেই এনজাইমকে স্থায়ীভাবে নষ্ট করে দেয় যা রক্তচাপের ওষুধকে পরিপাক করে নষ্ট করে। যার ফলে ওষুধ রক্তে অতিমাত্রায় জমে সুগার ও প্রেসার বিপজ্জনকভাবে নামিয়ে দেয় এবং মারাত্মক মাথা ঘোরার সৃষ্টি করে।',
+      '### বাংলাদেশি রোগীদের জন্য অতিরিক্ত লবণের সতর্কতা\n\nকাঁচা লবণ বা খাবারে বাড়তি লবণ খাওয়া বন্ধ রাখা প্রতিটি হাইপারটেনশন রোগীর জন্য আবশ্যিক। অতিরিক্ত সোডিয়াম শরীরের রক্তনালীতে পানির পরিমাণ বাড়িয়ে দেয়, যা রক্তচাপ ওষুধের গতিকে স্লথ করে কার্যকারিতা ব্যাহত করায়।'
     ]
   },
   {
-    id: 'paracetamol-overdose',
-    title: 'Safe Use of Paracetamol: Preventing Silent Liver Adverse Events',
-    titleBn: 'প্যারাসিটামলের নিরাপদ ব্যবহার: লিভারের দীর্ঘমেয়াদী ক্ষতি থেকে বাঁচুন',
-    slug: 'paracetamol-overdose-guide',
+    id: 'child-measles',
+    title: 'Rising Concern of Measles in Children: Crucial Guidance for Parents',
+    titleBn: 'শিশুদের মধ্যে আমাদের দেশে হাম নিয়ে বাড়ছে উদ্বেগ: অভিভাবকদের এখন কী করণীয়?',
+    slug: 'measles-awareness-and-pediatric-care',
+    category: 'Child Medicine Safety',
+    categoryBn: 'শিশু স্বাস্থ্য ও ওষুধ',
+    readTime: '5 min read',
+    readTimeBn: '৫ মিনিট পাঠ',
+    date: 'May 14, 2026',
+    dateBn: '১৪ মে, ২০২৬',
+    author: 'Dr. Tasnim Ara',
+    authorBn: 'ডা. তাসনিম আরা',
+    summary: 'An educational epidemic analysis of measles (Ham) in local children. Learn critical immunization schedules, fever reduction limits, and safe quarantine protocols.',
+    summaryBn: 'শিশুদের মারাত্মক সংক্রামক ব্যাধি হাম (Measles) বা স্থানীয়ভাবে প্রচলিত "হাম জ্বর" নিয়ে বাড়ছে শঙ্কা। কখন ইপিআই টিকা দেবেন, জ্বর কমানোর ভুল ওটিসি ওষুধের তীব্র সাইড ইফেক্ট ও পুষ্টি নিশ্চিত করার ঘরোয়া নিয়ম।',
+    disclaimer: 'Disclaimer: Measles can trigger severe pneumonia or encephalitis. Never use Aspirin to control pediatric fever due to Reye\'s Syndrome risk.',
+    disclaimerBn: 'সতর্কতা: হাম থেকে শিশুদের মারাত্মক নিউমোনিয়া বা তীব্র কানের সমস্যা হতে পারে। শিশুর জ্বর কমাতে বা হামের অস্বস্তিতে কখনো অ্যাসপিরিন (Aspirin) বা চিকিৎসকের তালিকা বহির্ভূত কড়া ব্যথানাশক দেবেন না।',
+    tags: ['Measles', 'EPI Immunization', 'Pediatric Care', 'Fever Safety'],
+    tagsBn: ['হাম রোগ', 'ইপিআই ভ্যাকসিন', 'শিশু চিকিৎসা', 'জ্বরের সতর্কতা'],
+    image: 'https://images.unsplash.com/photo-1502740479091-6398b19d99f4?q=80&w=800&auto=format&fit=crop',
+    content: [
+      '### Understanding Measles (Ham) Danger\n\nMeasles is a highly contagious viral infection that spreads via airborne droplets. In Bangladesh, parents sometimes hold superstitious beliefs, calling it a "nature curse" and avoiding normal hygienic bathing or proper food. Clinically, this catastrophic isolation leads to severe fluid/electrolyte loss and subsequent secondary bacterial pneumonia.',
+      '### Key Symptoms of Pediatric Measles\n\n*   **The Prodromal Phase**: Extremely high fever, dry hacking cough, runny nose, and red watery eyes.\n*   **Koplik Spots**: Small red spots with bluish-white centers inside the inner lining of the mouth (diagnostic sign of measles).\n*   **The Classic Measles Rash**: Flat red spots erupting on the forehead and face, slowly spreading downwards to neck, hands, and feet.',
+      '### Safe Fever Dosing & Avoidance of Dangerous OTC Medicines\n\nWhen a child has measles and high fever, never give them self-prescribed medications besides Paracetamol Syrup. Children below 16 must **absolutely avoid Aspirin** due to the catastrophic risk of Reye\'s Syndrome, a rare but highly lethal liver and brain systemic decay. For precise dose measurements, always consult our Pediatric Safety calculator or weight-based guidelines.',
+      '### Proactive Quarantine and Nutrition\n\nMaintain absolute isolated quarters for 5 days after rash onset. Ensure abundant Vitamin A intake, as measles rapidly depletes retinol reserves. Ask your healthcare facility for supplementary pediatric Vitamin A capsules, which drop measles mortality rates by 50%.'
+    ],
+    contentBn: [
+      '### শিশুদের হাম বা "হাম জ্বর" এর আধুনিক প্রকৃত চিকিৎসা\n\nহাম বা আমাদের দেশে সচরাচর পরিচিত "হাম জ্বর" একটি অত্যন্ত সংক্রামক বায়ুবাহিত ভাইরাস দ্বারা ঘটে থাকে। প্রাচীন ও প্রচলিত ভুল সংস্কারের কারণে অনেক পরিবারে এই রোগে আক্রান্ত শিশুকে ঘর অন্ধকার করে বাতাস বন্ধ রাখা হয়, গোসল করতে দেওয়া হয় না, এমনকি স্বাভাবিক দুধ বা পুষ্টিকর খাবার বন্ধ রাখা হয়। এই অযাচিত খাদ্য অবহেলা শিশুর শরীরকে মারাত্মক পুষ্টিহীন ও পানিশূন্য করে ফেলে যা নিউমোনিয়া তৈরিতে সহায়ক হয়।',
+      '### শিশুর হাম জ্বরের প্রাথমিক লক্ষণ ও শনাক্ত করার উপায়\n\n*   **প্রথম ৩-৪ দিন**: তীব্র জ্বর, অনবরত শুকনো কাশি, সর্দি লেগে থাকা ও চোখ লাল হয়ে অনবরত পানি পরা।\n*   **কপ্লিক স্পট**: শিশুর গালের ভেতরের নরম স্তরে লবণের দানার মতো সাদাটে দাগ বা ফুসকুড়ি দেখা দেওয়া।\n*   **টাইপিক্যাল হামের র‍্যাশ**: কানের পিছন থেকে লাল রঙের সূক্ষ্ম র‍্যাশ বের হয়ে ধীরে ধীরে কপাল, মুখমণ্ডল এবং ৪-৫ দিনে হাত ও সারা শরীরে ছড়িয়ে পড়ে।',
+      '### জ্বরের সঠিক ওষুধ এবং মারাত্মক অ্যাসপিরিনের ক্ষতিকর সতর্কতা\n\nশিশুর হাম জ্বরের অস্বস্তি বা অতিরিক্ত তাপমাত্রা কমানোর জন্য কখনো চিকিৎসকের পরামর্শ ছাড়া ওটিসি ওষুধ সেবন করাবেন না। ১৬ বছরের নিচের কোনো শিশুর জন্যই হামে বা অন্য কোনো ভাইরাল জ্বরে **অ্যাসপিরিন (Aspirin) সম্পূর্ণ নিষিদ্ধ**। অ্যাসপিরিন অনবধানবশত সেবনে শিশুর লিভার ও মস্তিষ্ক চিরতরে নষ্ট হয়ে যাওয়ার মতো মারাত্মক রোগ রে সিন্ড্রোম (Reye\'s Syndrome) দেখা দিতে পারে। শিশুর দেহের সঠিক ওজন মেপে প্যারাসিটামলের সিরাপ ড্রপ খাওয়ান।',
+      '### আইসোলেশন ও অতিপ্রয়োজনীয় ভিটামিন-এ এর ব্যবহার\n\nর‍্যাশ বের হওয়ার পর অন্তত ৫ দিন পর্যন্ত শিশুকে অন্য সুস্থ শিশুদের থেকে পৃথক রাখতে হবে। হামের ভাইরাসের কারণে শিশুর শরীরের অতিপ্রয়োজনীয় ভিটামিন-এ অত্যন্ত দ্রত নিঃশেষ হয়ে যায় যা চোখের অন্ধত্ব ও মারাত্মক ফুসফুসের ঝুঁকি বাড়ায়। তাই হামের ইতিহাস জানার সাথে সাথে সরকারি টিকা কেন্দ্র বা চিকিৎসকের পরামর্শে ডাবল ডোজে ক্যাপিউল আকারের ভিটামিন-এ খাওয়ানো মৃত্যুঝুঁকি ৫০% কমিয়ে দেয়।'
+    ]
+  },
+  {
+    id: 'zinc-height',
+    title: 'Does Zinc Sulfate Really Make Kids Grow Tall Faster? Decode the Supplement Myth',
+    titleBn: 'জিংক খেলে কি সত্যিই খুব দ্রুত শিশুর উচ্চতা বাড়ে? জেনে নিন জিংকের আসল ভূমিকা',
+    slug: 'zinc-supplementation-and-pediatric-growth',
     category: 'OTC & General Wellness',
     categoryBn: 'সাধারণ ব্যাধি ও ওটিসি ওষুধ',
     readTime: '4 min read',
     readTimeBn: '৪ মিনিট পাঠ',
-    date: 'May 15, 2026',
-    dateBn: '১৫ মে, ২০২৬',
-    author: 'Prof. Subrata Sen, Clinical Pharmacologist',
-    authorBn: 'অধ্যাপক সুব্রত সেন, ক্লিনিক্যাল ফার্মাকোলজিস্ট',
-    summary: 'OTC Cold remedies often hide Acetaminophen. Learn about cumulative toxicity thresholds, maximum daily dose limitations, and why alcohol is a lethal combo.',
-    summaryBn: 'ঠাণ্ডা-জ্বরের বিভিন্ন প্যাকেজ ওষুধে প্যারাসিটামল লুকিয়ে থাকে। জেনে নিন দৈনিক সর্বোচ্চ ওষুধের মাত্রা এবং কেন অ্যালকোহল ও প্যারাসিটামলের মিশ্রণ লিভারের জন্য মারাত্মক ক্ষতিকর।',
-    disclaimer: 'Disclaimer: The maximum adult daily dose of paracetamol is strictly 4000mg. Excess dose is highly hepatotoxic.',
-    disclaimerBn: 'সতর্কতা: প্রাপ্তবয়স্কদের জন্য প্যারাসিটামল সেবনের দৈনিক সর্বোচ্চ মাত্রা ৪০০০ মিলিগ্রাম। এর বেশি সেবন লিভারের চরম ক্ষতি ডেকে আনে।',
-    tags: ['Paracetamol', 'OTC', 'Liver Care', 'Pain Reliever'],
-    tagsBn: ['প্যারাসিটামল', 'ওটিসি', 'লিভারের যত্ন', 'ব্যথানাশক'],
-    image: 'https://picsum.photos/seed/liver/800/450',
-    content: [
-      '### The Paradox of OTC Availability\n\nMany consumers believe because **Paracetamol** (Acetaminophen) can be bought anywhere without a prescription, it is completely harmless. In reality, it is one of the leading causes of acute liver failure globally due to unintentional accidental overdosing.',
-      '### The Cumulative Trap: Cold Banners and Syrups\n\nCommonly marketed cold packets and cough syrups (such as multi-symptom cold relief capsules) often contain paracetamol as a dynamic base active ingredient. If you take standard paracetamol along with these cold remedies, you have initiated double-dosing. Always read the back panel label of your syrups and powders!',
-      '### Toxicity Thresholds\n\n*   **Adult Limit**: No more than **1000mg per single dose**, and absolutely no more than **4000mg in 24 hours** (usually equivalent to 8 standard 500mg tablets).\n*   **Interval**: Maintain at least **4 to 6 hours gap** between doses.\n*   **Alcohol Hazard**: Chronic alcohol intake depletes glutathione reserves in the liver. When glutathione is low, a toxic byproduct of paracetamol called **NAPQI** cannot be detoxified, leading directly to liver cell death.'
-    ],
-    contentBn: [
-      '### ওটিসি ওষুধের আড়ালে নীরব বিপদ\n\nপ্যারাসিটামল সহজে প্রেসক্রিপশন ছাড়া কেনা যায় বলে আমরা অনেকেই মনে করি এটি সম্পূর্ণ নিরাপদ। অথচ বিশ্বজুড়ে লিভার অকেজো হয়ে যাওয়ার অন্যতম প্রধান কারণ হলো অজান্তে অতিরিক্ত মাত্রায় প্যারাসিটামল সেবন।',
-      '### সাধারণ জ্বরের সিরাপ ও ট্যাবলেটের ফাঁদ\n\nঠাণ্ডা বা কাশির জন্য যে সব কম্বিনেশন সিরাপ বা ট্যাবলেট বাজারে পাওয়া যায়, সেগুলোর ভেতরেও প্যারাসিটামল সক্রিয় উপাদান হিসেবে থাকে। আপনি যদি মূল প্যারাসিটামল ট্যাবলেটের সাথে সাধারণ ঠাণ্ডা-কাশির ওষুধও খান, তবে শরীরের জন্য দ্বিগুণ মাত্রা হয়ে যায়। তাই ওষুধের পাতার পেছনে থাকা উপাদানের তালিকা মনোযোগ দিয়ে পড়ুন।',
-      '### গ্রহণের বিপদসীমা ও মাত্রা\n\n*   **সর্বোচ্চ সীমা**: একবারে সর্বোচ্চ **১০০০ মিলিগ্রাম (২টি ৫০০ মিগ্রা ট্যাবলেট)** এবং ২৪ ঘন্টায় সর্বোচ্চ **৪০০০ মিলিগ্রামের** বেশি সেবন করা সম্পূর্ণ নিষিদ্ধ।\n*   **সময়ের ব্যাবধান**: প্রতি দুই ডোজের মধ্যে অন্তত **৪ থেকে ৬ ঘণ্টার** ব্যাবধান রাখুন।\n*   **লিভারের ক্ষতি এড়াতে**: নিয়মিত ড্রিঙ্ক করা বা জন্ডিসের ইতিহাস থাকলে সতর্ক থাকতে হবে এবং চিকিৎসকের পরামর্শ ছাড়া ওটিসি প্যারাসিটামল খাওয়া বন্ধ রাখতে হবে।'
-    ]
-  },
-  {
-    id: 'antibiotic-resistance-crisis',
-    title: 'Why Stopping Antibiotics Early is Creating Drug-Resistant Superbugs',
-    titleBn: 'অ্যান্টিবায়োটিকের কোর্স অর্ধেক খেয়ে ছেড়ে দেওয়া কেন মারাত্মক বিপদ ডেকে আনছে?',
-    slug: 'antibiotic-resistance-crisis',
-    category: 'Antibiotic Stewardship',
-    categoryBn: 'অ্যান্টিবায়োটিকের সঠিক ব্যবহার',
-    readTime: '5 min read',
-    readTimeBn: '৫ মিনিট পাঠ',
     date: 'May 10, 2026',
     dateBn: '১০ মে, ২০২৬',
-    author: 'Dr. Tasnim Ara, Microbiologist',
-    authorBn: 'ডা. তাসনিম আরা, অণুজীববিদ',
-    summary: 'The science of clinical resistance. What happens to surviving bacterial strains when you discontinue antibiotic treatment as soon as you feel better.',
-    summaryBn: 'অর্ধেক অ্যান্টিবায়োটিক খেয়ে জ্বর কমলে ছেড়ে দিলে শরীরের ভেতরে বেঁচে থাকা শক্তিশালী ব্যাক্টেরিয়াগুলো পরবর্তী সময়ে সুপারবাগে রূপ নেয়। জানুন এর বৈজ্ঞানিক প্রভাব।',
-    disclaimer: 'Disclaimer: Always complete the full course of your antibiotic exactly as written on the prescription, even if your symptoms completely disappear.',
-    disclaimerBn: 'সতর্কতা: লক্ষণ দেখা দেওয়া বন্ধ হয়ে গেলেও প্রেসক্রিপশনের নির্দেশনা অনুযায়ী অ্যান্টিবায়োটিকের পূর্ণ কোর্স সম্পন্ন করুন।',
-    tags: ['Antibiotics', 'Superbugs', 'Health Safety', 'Resistance'],
-    tagsBn: ['অ্যান্টিবায়োটিক', 'সুপারবাগ', 'স্বাস্থ্য সচেতনতা', 'রেজিস্ট্যান্স'],
-    image: 'https://picsum.photos/seed/antibiotics/800/450',
+    author: 'Dr. Rafiqul Islam, Pharm.D',
+    authorBn: 'ডা. রফিকুল ইসলাম, ফার্ম.ডি',
+    summary: 'A detailed biochemical analysis of the trending parent zinc craze in Bangladesh. Understand cellular growth, immune optimization, and why excessive dosing triggers toxic metallic iron deficiencies.',
+    summaryBn: 'বাংলাদেশি অভিভাবকদের মাঝে শিশুদের অতিরিক্ত জিংক সিরাপ খাওয়ানোর ঝোঁক ইদানীং ব্যাপক রূপ নিয়েছে। সত্যিই কি জিংক খাওয়ালেই শিশু রাতারাতি লম্বা হবে? শিশুর হাড় বৃদ্ধি, ইমিউনিটি উন্নয়ন ও অতিরিক্ত জিংকের ফলে হওয়া রক্তশূন্যতা নিয়ে সঠিক আলোচনা।',
+    disclaimer: 'Disclaimer: Chronic overdosing of zinc sulfate can lead to cellular copper depletion and microcytic anemia.',
+    disclaimerBn: 'সতর্কতা: চিকিৎসকের পরামর্শ ব্যতিরেকে কন্টিনিউয়াস জিংক সিরাপ খাওয়ালে শিশুর শরীরে তামা (Copper) শোষণ স্থায়ীভাবে বন্ধ হয়ে মারাত্মক রক্তশূন্যতা ও হজম বিভ্রাট দেখা দেয়।',
+    tags: ['Zinc Sulfate', 'Pediatric Growth', 'Supplements', 'Iron Anemia'],
+    tagsBn: ['জিংক সালফেট', 'শিশুর পুষ্টি', 'সাপ্লিমেন্ট', 'রক্তশূন্যতা'],
+    image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?q=80&w=800&auto=format&fit=crop',
     content: [
-      '### The "I Feel Better" Illusion\n\nWhen you contract a bacterial infection, millions of pathogens colonize your body. Upon starting an antibiotic, the most vulnerable bacteria die in the first 48 hours. This makes your fever subside, and you feel recover. However, the slightly more resilient strains are still lingering, partially injured.',
-      '### Selection Pressure and Superbug Incubation\n\nIf you abort your prescription course midway (e.g., taking 3 days out of a 7-day course), the remaining robust bacteria recover, mutate, and acquire resistance genes against that drug. When they multiply again, that antibiotic becomes completely useless. You now host a drug-resistant "superbug" which you can spread to family members.'
+      '### The "Height Maker" Internet Sensation\n\nLately, on social media in Bangladesh, countless blogs are claiming that Zinc Sulfate syrup is a magical medicine to double your child\'s physical growth and height. Anxious parents are immediately buying these syrups without prescriptions, feeding them daily to kids as a long-term habit. Is this practice healthy?',
+      '### The Reality of Zinc in Pediatric Growth\n\nZinc is a critical micronutrient required for over 300 metabolic enzyme systems in the human body. It indeed synthesizes proteins, aids DNA structure, and drives bone cell multiplication. However, zinc is only a **cofactor** for natural growth. It cannot override your child\'s genetic DNA code or natural growth plates. Once the growth plates close, no amount of zinc will alter adult height.',
+      '### Zinc During Diarrhea: The Most Vital Usage\n\n*   **The Clinical Standard**: While not a height maker, zinc is a life-saver during acute diarrhea. Giving children 20mg zinc daily for 10-14 days reduces the duration and recurrence of severe pediatric dehydration.\n*   **Why It Works**: Zinc rapidly repairs damaged intestinal mucosal linings, preventing dangerous continuous fluid drainage.'
     ],
     contentBn: [
-      '### "আজ ভালো আছি" ভ্রম\n\nব্যাক্টেরিয়াল ইনফেকশনের পর অ্যান্টিবায়োটিক খাওয়া শুরু করলে সবচেয়ে দুর্বল জীবাণুগুলো প্রথম ৪৮ ঘণ্টায় মরে যায়। আপনার জ্বর কমে আসে ও সুস্থ বোধ করেন। কিন্তু মারাত্মক ক্ষতিকর ও শক্তিশালী ব্যাক্টেরিয়াগুলো তখনও অল্প আঘাতপ্রাপ্ত অবস্থায় বেঁচে থাকে।',
-      '### সুপারবাগ তৈরির প্রক্রিয়া\n\nআপনি যখন ৭ দিনের কোর্স ৩ দিন খেয়ে বন্ধ করেন, তখন থেকে যাওয়া শক্তিশালী ব্যাক্টেরিয়াগুলো বেঁচে থাকার জন্য নিজেদের গঠন পরিবর্তন করে ফেলে এবং ওই ওষুধের বিরুদ্ধে প্রতিরোধ গড়ে তোলে। পরবর্তীতে সেই ওষুধ আর তাদের ধ্বংস করতে পারে না।'
+      '### ইন্টারনেটে জিংক নিয়ে ভুল ভাইরাল হিড়িক\n\nইদানীং বাংলাদেশের ফেসবুক ও টিকটকে বেশ কিছু ব্লগে ব্যাপকভাবে প্রচারণা চালানো হচ্ছে যে জিংক সালফেট সিরাপ খাওয়ালেই শিশুর উচ্চতা ম্যাজিকের মতো হুড়হুড় করে বেড়ে যাবে। এই অসত্য তথ্যে প্রলুব্ধ হয়ে হাজার হাজার অভিভাবক কোনো প্রকার কনসাল্টেশন ছাড়াই নিয়মিত জিংক সিরাপ কিনে বোতলের পর বোতল খাইয়ে যাচ্ছেন। এটি শিশুর শরীরের জন্য মারাত্মক সংকট ডেকে আনতে পারে।',
+      '### শিশুর শারীরিক বৃদ্ধিতে জিংকের আসল বৈজ্ঞানিক ভূমিকা\n\nজিংক মেটাবলিজম ও শিশুর রোগ প্রতিরোধ ক্ষমতার ৩০০টি এনজাইমেটিক বিক্রিয়ায় সহায়ক ক্ষুদ্রাতিক্ষুদ্র খনিজ। এটি কোষ বিভাজন, প্রোটিন তৈরি ও শিশুর খাদ্য চাহিদা স্বাভাবিক রাখতে কাজ করে সত্যি, তবে এটি কোনো হরমন নয়। শিশুর উচ্চতা মূলত তার বাবা-মায়ের ডিএনএ ও বংশানুক্রমিক জিনের ওপর ৯০% নির্ভর করে। জিংক ঘাটতি থাকলে কেবল হজমে গোলমাল হতে পারে, অতিরিক্ত জিংক খাওয়ালেই শিশু জেনেটিক সীমার অতিরিক্ত দৈর্ঘ্য কখনো পাবে না।',
+      '### ডায়রিয়ায় জিংক: একটি অত্যন্ত জীবনরক্ষাকারী ব্যবহার\n\n*   **ক্লিনিক্যাল গুরুত্ব**: উচ্চতা বৃদ্ধি নয়, জিংক সবচেয়ে বড় ভূমিকা পালন করে ডায়রিয়া নিরাময়ে। বিশ্ব স্বাস্থ্য সংস্থার (WHO) মতে ডায়রিয়া আক্রান্ত শিশুকে দৈনিক ২০ মিলিগ্রাম করে একটানা ১০-১৪ দিন জিংক সিরাপ খাওয়ালে তার পাকস্থলীর ক্ষত নিরাময় হয় ও বার বার ডায়রিয়ার প্রবণতা সম্পূর্ণ কমে আসে।',
+      '### অতিরিক্ত জিংক ব্যবহারের নীরব ক্ষতি ও রক্তশূন্যতা\n\nনিয়মিত ৩ মাসের বেশি চিকিৎসকের অগোচরে জিংক খাওয়ালে শরীরে তামা বা কপার (Copper) শোষিত হতে বাধা পায়। কপার না থাকলে হাড়ের লাল মজ্জা থেকে লোহিত রক্তকণিকা ও হিমোগ্লোবিন তৈরি ব্যাহত হয়, যার দরুন শিশু চরম আয়রন ঘাটতিজনিত রক্তশূন্যতায় ভোগে।'
     ]
   }
 ];
 
 export const coursesData: Course[] = [
   {
-    id: 'rational-use-medicines',
-    title: 'Professional Guide: Rational Use of OTC & Chronic Medications',
-    titleBn: 'পেশাদার গাইড: ক্রনিক রোগ ও ওটিসি ওষুধের পরিমিত ব্যবহার',
-    instructor: 'Dr. Rafiqul Islam, Clinical Pharmacist',
-    instructorBn: 'ডা. রফিকুল ইসলাম, ক্লিনিক্যাল ফার্মাসিস্ট',
-    lessons: 15,
-    lessonsBn: '১৫টি লেকচার',
-    duration: '6h 30m',
-    durationBn: '৬ ঘণ্টা ৩০ মিনিট',
-    price: '৳১,৪৯০',
-    priceBn: '৳১,৪৯০',
-    originalPrice: '৳৩,০০০',
-    originalPriceBn: '৳৩,০০০',
+    id: 'antibiotics-safety',
+    title: 'Antibiotic Use & Precautions',
+    titleBn: 'অ্যান্টিবায়োটিক ব্যবহার ও সতর্কতা',
+    instructor: 'MD. NAYON KARIGOR',
+    instructorBn: 'MD. NAYON KARIGOR',
+    lessons: 10,
+    lessonsBn: '১০টি লেকচার',
+    duration: '2.5 Hours',
+    durationBn: '2.5 Hours',
+    price: '৳499',
+    priceBn: '৳৪৯৯',
+    originalPrice: '৳৯৯৯',
+    originalPriceBn: '৳৯৯৯',
     rating: 4.9,
-    enrolled: 340,
-    enrolledBn: '৩৪০ জন শিক্ষার্থী',
-    image: 'https://picsum.photos/seed/medcourse/500/300',
-    badge: 'Popular',
-    badgeBn: 'জনপ্রিয়'
+    enrolled: 1200,
+    enrolledBn: '১২০০+ নিবন্ধিত শিক্ষার্থী',
+    image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?q=80&w=500&auto=format&fit=crop',
+    badge: 'Admission Open',
+    badgeBn: 'ভর্তি চলছে'
   },
   {
-    id: 'cardiac-pharmacotherapy',
-    title: 'Advanced Cardiac Drug Guidelines for Healthcare Educators',
-    titleBn: 'স্বাস্থ্য সহায়কদের জন্য হৃদরোগের আধুনিক ওষুধ নির্দেশিকা',
-    instructor: 'Prof. Subrata Sen, FACC',
-    instructorBn: 'অধ্যাপক সুব্রত সেন, এফএসিসি',
-    lessons: 18,
-    lessonsBn: '১৮টি লেকচার',
-    duration: '8h 15m',
-    durationBn: '৮ ঘণ্টা ১৫ মিনিট',
-    price: '৳১,৯৫০',
-    priceBn: '৳১,৯৫০',
-    originalPrice: '৳৪,০০০',
-    originalPriceBn: '৳৪,০০০',
+    id: 'diabetes-treatment',
+    title: 'Diabetes: Cause, Symptoms and Treatment',
+    titleBn: 'ডায়াবেটিস: কারণ, লক্ষণ ও সঠিক চিকিৎসা',
+    instructor: 'MD. NAYON KARIGOR',
+    instructorBn: 'MD. NAYON KARIGOR',
+    lessons: 12,
+    lessonsBn: '১২টি লেকচার',
+    duration: '3 Hours',
+    durationBn: '3 Hours',
+    price: '৳599',
+    priceBn: '৳৫৯৯',
+    originalPrice: '৳১,১৯৯',
+    originalPriceBn: '৳১,১৯৯',
     rating: 4.8,
-    enrolled: 210,
-    enrolledBn: '২১০ জন শিক্ষার্থী',
-    image: 'https://picsum.photos/seed/cardiocourse/500/300',
-    badge: 'Premium',
-    badgeBn: 'প্রিমিয়াম'
+    enrolled: 850,
+    enrolledBn: '৮৫০+ নিবন্ধিত শিক্ষার্থী',
+    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=500&auto=format&fit=crop',
+    badge: 'Popular',
+    badgeBn: 'জনপ্রিয় কোর্স'
+  },
+  {
+    id: 'child-fever-care',
+    title: 'Pediatric Fever Symptoms & Care Guidelines',
+    titleBn: 'শিশুদের জ্বর: করণীয় ও চিকিৎসা',
+    instructor: 'MD. NAYON KARIGOR',
+    instructorBn: 'MD. NAYON KARIGOR',
+    lessons: 8,
+    lessonsBn: '৮টি লেকচার',
+    duration: '2 Hours',
+    durationBn: '2 Hours',
+    price: '৳499',
+    priceBn: '৳৪৯৯',
+    originalPrice: '৳৮৯৯',
+    originalPriceBn: '৳৮৯৯',
+    rating: 4.7,
+    enrolled: 620,
+    enrolledBn: '৬২০+ নিবন্ধিত শিক্ষার্থী',
+    image: 'https://images.unsplash.com/photo-1502740479091-6398b19d99f4?q=80&w=500&auto=format&fit=crop',
+    badge: 'Admission Open',
+    badgeBn: 'ভর্তি চলছে'
+  },
+  {
+    id: 'gastric-remedy',
+    title: 'Gastric Acid Reflux: Cause & Ultimate Solutions',
+    titleBn: 'পেটের গ্যাস ও অম্বল: কারণ ও সমাধান',
+    instructor: 'MD. NAYON KARIGOR',
+    instructorBn: 'MD. NAYON KARIGOR',
+    lessons: 6,
+    lessonsBn: '৬টি লেকচার',
+    duration: '1.5 Hours',
+    durationBn: '1.5 Hours',
+    price: '৳399',
+    priceBn: '৳৩৯৯',
+    originalPrice: '৳৭৯৯',
+    originalPriceBn: '৳৭৯৯',
+    rating: 4.9,
+    enrolled: 1400,
+    enrolledBn: '১৪০০+ নিবন্ধিত শিক্ষার্থী',
+    image: 'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?q=80&w=500&auto=format&fit=crop',
+    badge: 'Popular',
+    badgeBn: 'জনপ্রিয়'
   }
 ];
 
@@ -213,7 +290,7 @@ export const counselorsData: Counselor[] = [
     qualificationsBn: ['বি.ফার্ম, এম.ফার্ম (ঢাকা বিশ্ব.)', 'ডক্টর অব ফার্মেসি (ইউএসএ)', 'বয়স্কদের ওষুধ প্রয়োগে বিশেষ প্রশিক্ষণপ্রাপ্ত'],
     availability: 'Sat, Mon, Wed (07:00 PM - 09:30 PM)',
     availabilityBn: 'শনি, সোম, বুধ (সন্ধ্যা ০৭:০০ - রাত ০৯:৩০)',
-    avatar: 'https://picsum.photos/seed/doc1/150/150',
+    avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=150&auto=format&fit=crop',
     rating: 4.9
   },
   {
@@ -226,15 +303,88 @@ export const counselorsData: Counselor[] = [
     qualificationsBn: ['এমবিবিএস (ডিএমসি)', 'এমডি (শিশু স্বাস্থ্য)', 'মেডিসিন মেন্টর বিশেষজ্ঞ প্যানেলিস্ট'],
     availability: 'Sun, Tue, Thu (06:00 PM - 08:30 PM)',
     availabilityBn: 'রবি, মঙ্গল, বৃহস্পতি (স্বন্ধ্যা ০৬:০০ - রাত ০৮:৩০)',
-    avatar: 'https://picsum.photos/seed/doc2/150/150',
+    avatar: 'https://images.unsplash.com/photo-1594824813573-246434e33963?q=80&w=150&auto=format&fit=crop',
     rating: 4.8
+  }
+];
+
+export const booksData: Book[] = [
+  {
+    id: 'book-safe-medicine',
+    title: 'Complete Guide to Correct Medicine Usage',
+    titleBn: 'সঠিক ঔষধ ব্যবহারের সম্পূর্ণ গাইড',
+    author: 'NAYON KARIGOR',
+    authorBn: 'NAYON KARIGOR',
+    price: '৳450',
+    priceBn: '৳৪৫০',
+    originalPrice: '৳৬০০',
+    originalPriceBn: '৳৬০০',
+    pages: 350,
+    pagesBn: '৩৫০ পৃষ্ঠা',
+    rating: 4.9,
+    image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=400&auto=format&fit=crop',
+    badge: 'Best Seller',
+    badgeBn: 'বেস্ট সেলার',
+    description: 'A comprehensive guide on safe prescription administration, preventing drug interactions and side effects.',
+    descriptionBn: 'প্রেসক্রিপশনের জটিল ওষুধ নিরাপদ ব্যবহারে এবং ওটিসি ড্রাগের পার্শ্বপ্রতিক্রিয়া সম্পর্কে সহজ বাংলা ভাষায় লিখিত সম্পূর্ণ সমাধান।'
+  },
+  {
+    id: 'book-antibiotics-intro',
+    title: 'Easy Antibiotics Guide',
+    titleBn: 'আন্টিবায়োটিক সহজ পাঠ',
+    author: 'NAYON KARIGOR',
+    authorBn: 'NAYON KARIGOR',
+    price: '৳400',
+    priceBn: '৳৪০০',
+    originalPrice: '৳৫৫০',
+    originalPriceBn: '৳৫৫০',
+    pages: 280,
+    pagesBn: '২৮০ পৃষ্ঠা',
+    rating: 4.8,
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=400&auto=format&fit=crop',
+    badge: 'Must Read',
+    badgeBn: 'জরুরি পাঠ'
+  },
+  {
+    id: 'book-diabetes-solution',
+    title: 'Easy Diabetes Solutions',
+    titleBn: 'ডায়াবেটিস সহজ সমাধান',
+    author: 'NAYON KARIGOR',
+    authorBn: 'NAYON KARIGOR',
+    price: '৳500',
+    priceBn: '৳৫০০',
+    originalPrice: '৳৭০০',
+    originalPriceBn: '৳৭০০',
+    pages: 410,
+    pagesBn: '৪১০ পৃষ্ঠা',
+    rating: 4.8,
+    image: 'https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?q=80&w=400&auto=format&fit=crop',
+    badge: 'Recommended',
+    badgeBn: 'জনপ্রিয়'
+  },
+  {
+    id: 'book-child-health',
+    title: 'Simple Child Healthcare Guide',
+    titleBn: 'শিশুদের স্বাস্থ্য সহজ যত্ন',
+    author: 'NAYON KARIGOR',
+    authorBn: 'NAYON KARIGOR',
+    price: '৳350',
+    priceBn: '৳৩৫০',
+    originalPrice: '৳৫০০',
+    originalPriceBn: '৳৫০০',
+    pages: 240,
+    pagesBn: '২৪০ পৃষ্ঠা',
+    rating: 4.7,
+    image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=400&auto=format&fit=crop',
+    badge: 'New Edition',
+    badgeBn: 'নতুন সংস্করণ'
   }
 ];
 
 // Color values for style guide representation
 export const designTokens = {
   colors: [
-    { name: 'Primary Premium Aqua/Teal', hex: '#0EA5E9', class: 'bg-indigo-600', use: 'Main Action buttons, Brand Logo highlight, structural markers' },
+    { name: 'Primary Clinical Aqua/Teal', hex: '#0EA5E9', class: 'bg-sky-500', use: 'Main Action buttons, Brand Logo highlight, structural markers' },
     { name: 'Soothe Mint/Healthcare Light', hex: '#0D9488', class: 'bg-teal-600', use: 'Trust badges, verified indicators, and medical graphics' },
     { name: 'Warning / Alert Coral', hex: '#F43F5E', class: 'bg-rose-500', use: 'Medical disclaimers, dose alerts, danger notifications' },
     { name: 'Slate Gray', hex: '#475569', class: 'bg-slate-600', use: 'Primary secondary descriptions and structural borders' },

@@ -62,22 +62,34 @@ export default function ArticleView({ language, setCurrentView }: ArticleViewPro
       />
 
       {/* Selector ribbon between mockup articles */}
-      <div className="bg-sky-50 py-3 border-b border-sky-100 flex flex-wrap justify-center items-center gap-3.5 px-4">
-        <span className="text-xs font-bold text-sky-800 uppercase tracking-wider flex items-center gap-1">
+      <div className="bg-sky-50 py-3 border-b border-sky-100 flex flex-col md:flex-row justify-center items-center gap-3.5 px-4">
+        <span className="text-xs font-bold text-sky-800 uppercase tracking-wider flex items-center gap-1 shrink-0">
           <BookOpen className="w-3.5 h-3.5" />
           <span>{language === 'en' ? 'Select Redesign Theme Mockup' : 'অন্যান্য রিডিজাইন নিবন্ধগুলি দেখুন'}</span>
         </span>
-        <div className="flex bg-white p-0.5 rounded-lg border border-sky-200">
-          {articlesData.map(art => (
-            <button
-              id={`select-art-${art.id}`}
-              key={art.id}
-              onClick={() => { setSelectedArticleId(art.id); setLiked(false); }}
-              className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-all ${selectedArticleId === art.id ? 'bg-sky-500 text-white' : 'text-slate-600 hover:text-slate-900 bg-transparent'}`}
-            >
-              {language === 'en' ? art.title.split(':')[0] : art.titleBn.split(':')[0]}
-            </button>
-          ))}
+        <div className="flex bg-white p-1 rounded-xl border border-sky-100 overflow-x-auto scrollbar-none max-w-full">
+          {articlesData.map(art => {
+            const getShortTitle = (id: string, currentLang: 'en' | 'bn') => {
+              const table: Record<string, { en: string; bn: string }> = {
+                'diabetes-diet': { en: 'Diabetes Diet', bn: 'ডায়াবেটিস খাদ্যতালিকা' },
+                'hypertension-guide': { en: 'Hypertension CCB', bn: 'রক্তচাপ ও অ্যামলোডিপিন' },
+                'child-measles': { en: 'Child Measles', bn: 'শিশুর হামের সতর্কতা' },
+                'zinc-height': { en: 'Zinc Supplement', bn: 'জিংক ও শিশুর উচ্চতা' },
+              };
+              return table[id]?.[currentLang] || id;
+            };
+
+            return (
+              <button
+                id={`select-art-${art.id}`}
+                key={art.id}
+                onClick={() => { setSelectedArticleId(art.id); setLiked(false); }}
+                className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all shrink-0 whitespace-nowrap ${selectedArticleId === art.id ? 'bg-sky-500 text-white shadow-sm' : 'text-slate-600 hover:text-slate-950 bg-transparent'}`}
+              >
+                {getShortTitle(art.id, language)}
+              </button>
+            );
+          })}
         </div>
       </div>
 
